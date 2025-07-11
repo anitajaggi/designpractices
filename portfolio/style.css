@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato-bold';
+    src: url('fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Michromo';
+    src: url('fonts/Michroma-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+* {
+    font-family: 'Michromo', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    behavior: smooth;
+}
+
+:root {
+    --background: #000;
+    --primary: #172139;
+    --secondary: #A7BDD3;
+    --text: #EAFBFF;
+    --other: #E77023;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background);
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+}
+
+header {
+    background-color: var(--primary);
+    box-shadow: 2px 15px 10px var(--primary);
+    position: fixed;
+    z-index: 100;
+}
+
+.hero-area {
+    background-image: url(https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fexternal-preview.redd.it%2Fx7vVnP3L75Wh4ApmXedKjze9b7ZuH5h7oW-4xbHMiHQ.jpg%3Fauto%3Dwebp%26s%3Db7d6873eed8c442bb685a083b3b4bfff6dd009ac);
+    background-image: url(hero.jpg_auto=webp&s=b7d6873eed8c442bb685a083b3b4bfff6dd009ac);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-area::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    background-color: #00000031;
+    backdrop-filter: blur(5px);
+    transition: all 1s linear;
+    transform-origin: center;
+}
+
+.btn {
+    font-size: 1rem;
+    border: 1px solid var(--secondary);
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+}
+
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    padding-block: 0.2rem;
+}
+
+nav ul li a::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 1.5px;
+    width: 0%;
+    background-color: var(--secondary);
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover::after {
+    animation: linkborder 0.5s forwards;
+}
+
+@keyframes linkborder {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.skl {
+    position: relative;
+    background-color: #1F1E23;
+    z-index: 2;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.skl::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    z-index: -1;
+    background-color: var(--primary);
+}
+
+.skl:hover {
+    rotate: 2deg;
+}
+
+.project-card {
+    background-color: var(--background);
+    border-radius: 1rem;
+    border: 1px solid var(--primary);
+    transition: all 0.2s linear;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    scale: 1.01;
+}
+
+.project-card .p-btn {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.project-card .p-btn:hover {
+    border-bottom: 1px solid var(--secondary);
+}
+
+input,
+textarea {
+    background-color: var(--primary);
+    border: 1px solid var(--secondary);
+}
+
+footer {
+    background-color: #1F1E23;
+}
+
+@media (max-width:767px) {
+    .btn {
+        font-size: 0.7rem;
+        padding: 0.2rem 1rem;
+    }
+
+    header {
+        padding-inline: 1rem;
+        position: relative;
+    }
+
+    .mob-nav {
+        position: absolute;
+        top: 80%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .mob-nav ul {
+        padding: 1rem;
+        flex-direction: column;
+        background-color: var(--primary);
+
+    }
+}
